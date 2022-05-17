@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using Valve.VR;
 using Debug = UnityEngine.Debug;
 
+// TODO: Fix chat bugs / chat overflow when invalid emote, fix interface and grammar, fix other things.
 [RequireComponent(typeof(TwitchIRC), typeof(TextMesh))]
 public class TwitchChatTester : MonoBehaviour
 {
@@ -192,7 +193,7 @@ public class TwitchChatTester : MonoBehaviour
             var headers = form.headers;
             var url = URLAntiCacheRandomizer("https://api.twitch.tv/kraken/channels/" + IRC.ChannelName + "/follows?limit=100");
 
-            headers["Client-ID"] = "REMOVED FOR GITHUB"; //#TODO Replace with your Client-ID
+            headers["Client-ID"] = "REMOVED"; //#TODO Replace with your Client-ID
             var www = new WWW(url, null, headers);
             yield return www;
             if (string.IsNullOrEmpty(www.error))
