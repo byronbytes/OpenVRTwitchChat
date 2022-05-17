@@ -26,7 +26,8 @@ public class TwitchIRC : MonoBehaviour
 
     private static readonly Dictionary<string, string> UserColors = new Dictionary<string, string>();
     private static System.Random Random = new System.Random();
-
+    
+    private bool showException; //Show exception text setting, will go through more changes soon.
     private bool _connected;
     private bool _loggedin;
 
@@ -71,7 +72,7 @@ public class TwitchIRC : MonoBehaviour
         {
             if (!_loggedin)
             {
-                _recievedMsgs.Add(new TwitchMessage(ToNotice("System", "Should be logged in by now.. are the username and oauth correct?", NoticeColor.Yellow)));
+                _recievedMsgs.Add(new TwitchMessage(ToNotice("System", "Should be logged in by now.. the username / auth may be incorrect.", NoticeColor.Yellow)));
             }
             else if (!_connected)
             {
@@ -194,7 +195,7 @@ public class TwitchIRC : MonoBehaviour
                     case "CAP":
                         lock (_recievedMsgs)
                         {
-                            _recievedMsgs.Add(new TwitchMessage(ToTwitchNotice("Acknowledging Client Capabilities!")));
+                            _recievedMsgs.Add(new TwitchMessage(ToTwitchNotice("Acknowledging Client Capabilities!"))); // no clue what this means but ill probbly update the text 4 it.
                         }
                         break;
                     case "USERSTATE":
@@ -212,7 +213,7 @@ public class TwitchIRC : MonoBehaviour
                 Debug.LogException(e);
                 lock (_recievedMsgs)
                 {
-                    _recievedMsgs.Add(new TwitchMessage(ToNotice("EXCEPTION", e.ToString(), NoticeColor.Red)));
+                    _recievedMsgs.Add(new TwitchMessage(ToNotice("Exception: ", "An unknown exception has ocurred.", NoticeColor.Red))); // could be why emotes break? e.ToString()
                 }
             }
         }
