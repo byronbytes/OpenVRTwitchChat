@@ -17,7 +17,7 @@ public class TwitchChatTester : MonoBehaviour
     }
     private static TwitchChatTester _instance;
 
-    public int ChatLineCount = 27; // Max line count for our display
+    public int ChatLineCount = 27; // Max line count for our display. Update might make it larger or customizable.
 
     public InputField UsernameBox;
     public InputField OAuthBox;
@@ -101,7 +101,7 @@ public class TwitchChatTester : MonoBehaviour
             {
                 if (string.IsNullOrEmpty(OAuthBox.text))
                 {
-                    AddSystemNotice("OAuth not found. Connecting Anonymously.", TwitchIRC.NoticeColor.Yellow);
+                    AddSystemNotice("OAuth Key not found. Connecting Anonymously.", TwitchIRC.NoticeColor.Yellow);
                     GenRandomJustinFan();
                     UsernameBox.text = _username;
                     OAuthBox.text = "";
