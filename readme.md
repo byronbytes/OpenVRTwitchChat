@@ -1,9 +1,9 @@
 
 ====
-### This is the new home of the TwitchChatOverlay repository!
-### It was previously located [over here](https://github.com/Hotrian/HeadlessOverlayToolkit/tree/twitchtest)!
-#### See also my [OpenVRDesktopDisplayPortal](https://github.com/Hotrian/OpenVRDesktopDisplayPortal) for putting any desktop window into VR :D
+### I have decided to maintain this project. I don't know what to type so I'll type more later.
 ====
+
+Donate to the original creator here:
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8PWSSHWNCWWQU)
 
 This is a stripped down version of the SteamVR Unity Plugin with a custom Overlay script that displays twitch chat!
