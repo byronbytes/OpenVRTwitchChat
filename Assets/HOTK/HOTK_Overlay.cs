@@ -15,7 +15,7 @@ public class HOTK_Overlay : MonoBehaviour
     #region Settings
     [Tooltip("The texture that will be drawn for the Overlay.")]
     public Texture OverlayTexture;
-    [Tooltip("How, if at all, the Overlay is animated when being looked at.")]
+    [Tooltip("How the Overlay is animated when being looked at.")]
     public AnimationType AnimateOnGaze = AnimationType.None;
     [Tooltip("The alpha at which the Overlay will be drawn.")]
     public float Alpha = 1.0f;			// opacity 0..1
