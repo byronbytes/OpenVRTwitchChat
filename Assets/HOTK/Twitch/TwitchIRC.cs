@@ -40,7 +40,7 @@ public class TwitchIRC : MonoBehaviour
         sock.Connect(Server, Port);
         if (!sock.Connected)
         {
-            ToNotice("System", "Failed to connect!", NoticeColor.Red);
+            ToNotice("System", "Failed to connect.", NoticeColor.Red);
             return;
         }
         var networkStream = sock.GetStream();
@@ -72,7 +72,7 @@ public class TwitchIRC : MonoBehaviour
         {
             if (!_loggedin)
             {
-                _recievedMsgs.Add(new TwitchMessage(ToNotice("System", "Should be logged in by now.. the username / auth may be incorrect.", NoticeColor.Yellow)));
+                _recievedMsgs.Add(new TwitchMessage(ToNotice("System", "Should be logged in by now.. is the username / auth correct?", NoticeColor.Yellow)));
             }
             else if (!_connected)
             {
